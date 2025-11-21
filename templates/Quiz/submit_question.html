@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Submit a Question{% endblock title %}
+{% block body %}
+<div class="container mt-5">
+    <h2>Submit a New Quiz Question</h2>
+    {% if success %}
+        <div class="alert alert-success">Thank you! Your question is submitted for review and will be added after admin approval.</div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3"><label>Question Text:</label>
+            <input type="text" name="question_text" class="form-control" required>
+        </div>
+        <div class="mb-3"><label>Subject:</label>
+            <input type="text" name="subject" class="form-control" required>
+        </div>
+        <div class="mb-3"><label>Topic:</label>
+            <input type="text" name="topic" class="form-control" required>
+        </div>
+        <div class="mb-3"><label>Difficulty:</label>
+            <select name="difficulty" class="form-select">
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+            </select>
+        </div>
+        <div class="mb-3"><label>Category:</label>
+            <input type="text" name="category" class="form-control" value="General">
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Submit Question</button>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container my-5">
+    {% if error %}
+        <div class="alert alert-warning">{{ error }}</div>
+    {% else %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div><strong>Question {{ current }} of {{ total }}</strong></div>
+            <div><strong>Category:</strong> {{ category }}</div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h4 class="mb-2">{{ question.question_text }}</h4>
+                <form method="post" id="mapquest_form">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {% for choice in choices %}
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="selected_option" id="choice{{ forloop.counter }}" value="{{ choice }}" required>
+                            <label class="form-check-label" for="choice{{ forloop.counter }}">{{ choice }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn btn-primary shadow-sm">Submit Answer</button>
+                </form>
+                <div id="timer" class="mt-3 text-muted">Time left: <span>30</span> seconds</div>
+            </div>
+            <div class="col-md-6 text-center">
+                {% if question.image %}
+                    <img src="{{ question.image.url }}" alt="Question Map/Image" class="img-fluid rounded shadow my-3" style="max-height: 380px;">
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</div>
+<script>
+let timeLeft = 30;
+const timerDisplay = document.querySelector('#timer span');
+const form = document.getElementById('mapquest_form');
+const countdown = setInterval(() => {
+    if (timeLeft <= 0) {
+        clearInterval(countdown);
+        alert('Time is up! Submitting your answer...');
+        form.submit();
+    } else {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+    }
+}, 1000);
+</script>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="text-center p-5 retro-about bg-light rounded-4 shadow">
+        <h1 class="mb-3 display-4" style="font-family: 'Courier New', Courier, monospace; color: #003366;">
+            About EduQuest
+        </h1>
+        <p class="lead fst-italic" style="font-family: 'Georgia', serif; font-size: 1.25rem; max-width: 900px; margin:auto; color: #004080;">
+            EduQuest is the brainchild of Jay Narendra Machhi — a unique educational game platform built with passion using Django and MySQL.  
+            Designed to turn learning into an epic and fun-filled adventure, EduQuest offers quizzes, brain puzzles, vocab battles, and map exploration to students of all ages.  
+            Our aim is to create an engaging atmosphere where knowledge meets play, fostering curiosity and competitive spirit in every learner.  
+            We believe that education should be stimulating yet entertaining, blending retro-classic charm with cutting-edge tech to craft your ultimate quiz experience.
+        </p>
+        <div class="mt-4" style="font-family: monospace; font-size: 0.9rem; color: #666;">
+            <strong>Developer:</strong> Jay Narendra Machhi<br>
+            <strong>Contact:</strong> support@eduquest.quiz
+        </div>
+    </div>
+</div>
+{% endblock body %}

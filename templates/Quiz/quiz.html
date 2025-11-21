@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="card p-4 shadow-lg rounded-4 mx-auto" style="max-width: 650px;">
+        <h2 class="fw-bold text-primary mb-2 text-center animate__animated animate__fadeInDown">
+            Adaptive Quiz
+            <span class="ms-2"><i class="fas fa-rocket text-warning"></i></span>
+        </h2>
+        <hr>
+        {% if quiz %}
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="quiz_id" value="{{ quiz.id }}">
+                <h4 class="mb-4 animate__animated animate__fadeInUp">{{ quiz.question_text }}</h4>
+                <div class="list-group">
+                {% for option in options %}
+                    <label class="list-group-item list-group-item-action quiz-option animate__animated animate__pulse" style="transition:.3s all;">
+                        <input class="form-check-input me-1" type="radio" name="option" id="option{{option.id}}" value="{{option.id}}">
+                        {{option.option_text}}
+                    </label>
+                {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-success btn-lg mt-4 w-100 animate__animated animate__bounceIn">
+                    Submit <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+            </form>
+        {% else %}
+            <div class="alert alert-warning text-center animate__animated animate__shakeX">
+                No quizzes available! 🙁
+            </div>
+        {% endif %}
+    </div>
+</div>
+<!-- Animate.css CDN for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
+.quiz-option:hover, .quiz-option:focus-within {
+    background: linear-gradient(90deg, #B6FFCE 0%, #F9FFC0 100%);
+    transform: scale(1.025);
+    box-shadow: 0 4px 24px rgba(40,167,69,0.08);
+    cursor: pointer;
+}
+</style>
+{% endblock %}

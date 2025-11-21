@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Challenge Mode{% endblock title %}
+{% block body %}
+<div class="container mt-5">
+    <h2>Challenge a Peer!</h2>
+    <form id="challengeForm" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="opponentSelect" class="form-label">Select a classmate:</label>
+            <select id="opponentSelect" name="opponent" class="form-select" required>
+                {% for u in users %}
+                <option value="{{ u.pk }}">{{ u.username }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="quizSelect" class="form-label">Select a quiz:</label>
+            <select id="quizSelect" name="quiz" class="form-select" required>
+                {% for q in quizzes %}
+                <option value="{{ q.pk }}">{{ q.question_text|truncatechars:40 }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Send Challenge</button>
+    </form>
+    <div id="result" class="mt-3"></div>
+</div>
+{% endblock body %}
+{% block scriptsrc %}
+<script>
+document.getElementById('challengeForm').onsubmit = function(e) {
+    e.preventDefault();
+    let formData = new FormData(this);
+    fetch(window.location.href, {
+        method: 'POST',
+        body: formData
+    }).then(res => res.json()).then(data => {
+        if (data.success) {
+            document.getElementById('result').innerHTML = `<span style="color:green">Challenge sent! ID: ${data.challenge_id}</span>`;
+        } else {
+            document.getElementById('result').innerHTML = `<span style="color:red">Error sending challenge.</span>`;
+        }
+    });
+};
+</script>
+{% endblock scriptsrc %}

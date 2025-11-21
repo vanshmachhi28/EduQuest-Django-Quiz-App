@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container text-center my-5">
+  <h2 class="display-4 text-info">BrainBoost Complete!</h2>
+  <p class="mt-4 lead"><b>Category:</b> {{ category }}</p>
+  <h3 class="mb-4">You scored <span class="text-success">{{ score }}</span> out of <span class="text-primary">{{ total }}</span>!</h3>
+  <a href="{% url 'brainboost_home' %}" class="btn btn-primary btn-lg mt-3">Go Again!</a>
+</div>
+{% endblock %}

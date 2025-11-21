@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container text-center my-5">
+  <h1 class="display-4">WordWhiz Mode</h1>
+  <div class="row justify-content-center g-4 mt-4">
+    {% for value, label in categories %}
+    <div class="col-md-3">
+      <a href="{% url 'wordwhiz_quiz' value %}" class="btn btn-outline-success btn-lg retro-btn w-100">
+        {{ label }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+{% block style %}
+.retro-btn {
+  font-family: 'Press Start 2P', monospace, cursive;
+}
+{% endblock %}

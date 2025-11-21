@@ -1,0 +1,22 @@
+{% if error %}
+  <div class="alert alert-warning mt-5 text-center">{{ error }}</div>
+{% else %}
+  <div class="container text-center my-5">
+    <h2>BrainBoost Mode - <span class="text-info">{{ puzzle_type }}</span></h2>
+    <form id="brainboostForm" method="post" class="mt-4">
+      {% csrf_token %}
+      <input type="hidden" name="puzzle_id" value="{{ puzzle.pk }}">
+      <h4 class="mb-3">{{ puzzle.question_text }}</h4>
+      <div class="row justify-content-center">
+        {% for opt in options %}
+          <div class="col-md-3 mb-2">
+            <input class="btn-check" type="radio" name="selected_answer" id="bb-opt{{ forloop.counter }}" value="{{ opt }}">
+            <label class="btn btn-outline-secondary w-100" for="bb-opt{{ forloop.counter }}">{{ opt }}</label>
+          </div>
+        {% endfor %}
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      <div class="mt-4"><strong>Time Limit:</strong> {{ time_limit }} seconds</div>
+    </form>
+  </div>
+{% endif %}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Performance Tracker{% endblock title %}
+{% block body %}
+<div class="container my-5">
+    <h2 class="mb-4 text-primary fw-bold">Performance Tracker & Analytics 🚀</h2>
+    <div class="row g-4 mb-4">
+        <div class="col-lg-4">
+            <div class="card shadow-sm text-center bg-light border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Accuracy Rate</h5>
+                    <p class="display-6 fw-bold text-success">{{ accuracy }}%</p>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-success" style="width: {{ accuracy }}%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow-sm text-center bg-light border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Avg Time/Question</h5>
+                    <p class="display-6 fw-bold text-info">{{ avg_time }}s</p>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-info" style="width: {{ avg_time|floatformat:0 }}%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow-sm text-center bg-light border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Topic Coverage</h5>
+                    <ul class="list-group">
+                        {% for topic, count in topic_counts %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><b>{{ topic }}</b></span>
+                            <span class="badge bg-primary rounded-pill">{{ count }}</span>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">No quizzes taken yet!</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="fw-bold mb-3">Recent Quiz Attempts</h4>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped border rounded">
+            <thead class="table-dark">
+                <tr>
+                    <th>Quiz</th>
+                    <th>Score</th>
+                    <th>Correct?</th>
+                    <th>Time (s)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rec in records %}
+                <tr>
+                    <td>{{ rec.quiz }}</td>
+                    <td>{{ rec.score }}</td>
+                    <td>
+                        {% if rec.correct %}
+                            <span class="text-success fw-bold">✔</span>
+                        {% else %}
+                            <span class="text-danger fw-bold">✘</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ rec.time_taken|floatformat:2 }}</td>
+                    <td>{{ rec.taken_at|date:"M d, Y H:i" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">No quiz records yet! Take a test now.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

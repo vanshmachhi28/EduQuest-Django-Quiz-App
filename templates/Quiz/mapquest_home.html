@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container text-center my-5">
+    <h1 class="display-4">MapQuest Mode</h1>
+    <div class="row justify-content-center g-4 mt-4">
+        {% for value, label in categories %}
+        <div class="col-md-3">
+            <a href="{% url 'mapquest_quiz' value %}" class="btn btn-outline-primary btn-lg shadow-lg w-100 p-4 retro-btn">
+                {% if value == "capital" %}🏙️{% elif value == "state_location" %}🗺️{% elif value == "flag_match" %}🏳️{% else %}🧩{% endif %}
+                <br>{{ label }}
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block style %}
+.retro-btn {
+    font-family: 'Press Start 2P', monospace, cursive;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    color: #00447a;
+}
+.retro-btn:hover {
+    background: #0083ff;
+    color: white !important;
+    transform: scale(1.04) rotate(-3deg);
+    box-shadow: 0 0 15px #007bff;
+}
+{% endblock %}

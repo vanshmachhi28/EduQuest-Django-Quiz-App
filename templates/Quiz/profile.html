@@ -1,0 +1,15 @@
+<h3>Your Badges</h3>
+<div class="d-flex flex-wrap gap-3">
+  {% for ub in badges %}
+    <div class="badge-card text-center p-2 border rounded">
+      {% if ub.badge.icon %}
+        <img src="{{ ub.badge.icon.url }}" alt="{{ ub.badge.name }}" style="height: 64px;">
+      {% else %}
+        <div style="height:64px; line-height:64px;">🏆</div>
+      {% endif %}
+      <div>{{ ub.badge.name }}</div>
+    </div>
+  {% empty %}
+    <p>No badges earned yet. Keep going!</p>
+  {% endfor %}
+</div>

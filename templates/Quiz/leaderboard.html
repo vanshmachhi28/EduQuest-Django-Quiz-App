@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 animate__animated animate__flash" style="color:#427bfd;font-weight:bold;">🏆 Leaderboard</h2>
+    <table class="table table-hover table-striped shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Level <i class="bi bi-arrow-up-circle-fill"></i></th>
+                <th>XP <i class="bi bi-star-fill"></i></th>
+                <th>Trophies <i class="bi bi-trophy-fill"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in leaderboard %}
+            <tr class="{% if forloop.counter == 1 %}table-success animate__animated animate__pulse{% elif forloop.counter == 2 %}table-primary animate__animated animate__pulse{% elif forloop.counter == 3 %}table-warning animate__animated animate__pulse{% endif %}">
+                <td>
+                    {% if forloop.counter == 1 %}
+                        🥇
+                    {% elif forloop.counter == 2 %}
+                        🥈
+                    {% elif forloop.counter == 3 %}
+                        🥉
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                </td>
+                <td><b>{{ user.user.username }}</b></td>
+                <td>{{ user.level }}</td>
+                <td>{{ user.xp }}</td>
+                <td>
+                    {% if user.trophies > 0 %}
+                        <span class="badge bg-warning text-dark blink">{{ user.trophies }}</span>
+                    {% else %}
+                        0
+                    {% endif %}
+                    
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</div>
+
+<style>
+.blink {
+    animation: blink 1s linear infinite;
+}
+@keyframes blink {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(2.5); }
+    100% { filter: brightness(1); }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+{% endblock %}

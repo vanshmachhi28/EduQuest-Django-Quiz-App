@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quiz App{% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% block link %}
+        <link rel="stylesheet" href="{% static 'Quiz/css/style.css' %}">
+    {% endblock link %}
+    <style>
+        {% block style %}{% endblock style %}
+        .nav-link:hover, .navbar-brand:hover { color: #0d6efd !important; transform: scale(1.08);}
+        .navbar {box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
+        .footer-link:hover { color:#0d6efd !important; text-decoration: underline;}
+
+        @keyframes blink {
+            0%, 100% {opacity: 1;}
+            50% {opacity: 0;}
+        }
+        .blink-text {
+            animation: blink 1.5s infinite;
+            font-weight: bold;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white px-3 border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-primary" href="{% url 'home' %}">EduQuest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link{% if incomplete_challenges > 0 %} blink-text{% endif %}" href="{% url 'challenge_mode' %}">
+                                Challenge
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'mapquest_home' %}">MapQuest</a></li>
+             <!--     <li><a class="nav-item"><a class="nav-link" href="{% url 'quiz' %}">Adaptive Quiz</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'brainboost_home' %}">BrainBoost</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'wordwhiz_home' %}">WordWhiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'performance_tracker' %}">Analytics</a></li>
+                 <!--   <li class="nav-item"><a class="nav-link" href="{% url 'leaderboard' %}">Leaderboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'badge_showcase' %}">Badges</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a></li>
+                </ul>
+                <div class="ms-3">
+                    {% if user.is_authenticated %}
+                        <img src="{% static 'Quiz/img/user-icon.png' %}" alt="User" width="28" style="border-radius:50%; vertical-align:middle;">
+                        <span class="text-secondary fw-semibold">{{ user.username }}</span>
+                        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm ms-2">Logout</a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-primary btn-sm ms-2">Login</a>
+                        <a href="{% url 'admin:index' %}" class="btn btn-warning btn-sm ms-2">Admin Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block body %}{% endblock body %}
+    <footer class="bg-dark text-light mt-5 py-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>&copy; 2025 EduQuest Quiz Project</span>
+            <span>
+                <a href="{% url 'home' %}" class="footer-link text-light me-3">Home</a>
+                <a href="{% url 'performance_tracker' %}" class="footer-link text-light me-3">Analytics</a>
+                <a href="{% url 'download_report' %}" class="footer-link text-light">Weekly Report</a>
+            </span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scriptsrc %}{% endblock scriptsrc %}
+    <script>
+        {% block script %}{% endblock script %}
+    </script>
+</body>
+</html>

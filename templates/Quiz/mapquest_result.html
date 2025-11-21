@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container text-center my-5">
+    <h2 class="display-4">MapQuest Quiz Completed!</h2>
+    <p>Your Score: <strong>{{score}}</strong> out of {{total}}</p>
+    <a href="{% url 'mapquest_home' %}" class="btn btn-primary retro-btn">Try Again</a>
+</div>
+{% endblock %}
+{% block style %}
+.retro-btn {
+    font-family: 'Press Start 2P', monospace, cursive;
+}
+{% endblock %}
