@@ -335,7 +335,7 @@ This project is licensed under the **MIT License** – see the `LICENSE` file fo
 
 **Developer:** Vansh Prakash Machhi  
 **Email:** [machhivansh470@gmail.com](mailto:machhivansh470@gmail.com)  
-**GitHub:** [@VanshMachhi](https://github.com/VanshMachhi)  
+**GitHub:** [@VanshMachhi](https://github.com/vanshmachhi28)  
 
 Have questions? Found a bug? Open an issue or contact me directly!
 
@@ -353,8 +353,3 @@ Have questions? Found a bug? Open an issue or contact me directly!
 > 🎓 **Transform Learning with EduQuest**  
 > _Adaptive quizzes, gamification, and analytics—all in one platform._  
 > _Making education engaging, personalized, and data-driven._
-
----
-
-**Last Updated:** November 2025  
-**Status:** Active Development 🚀
