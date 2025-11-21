@@ -1,0 +1,18 @@
+body{
+    background-image: url(/static/Quiz/img/login/OIP.jpg);
+    background-repeat: repeat;
+    background-color: black;
+    color: white;
+}
+
+.login-container {
+    padding-top: 8%;
+    backdrop-filter: blur(10px);
+    padding-bottom: 8%;
+}
+
+.signup-container {
+    padding-top: 5%;
+    backdrop-filter: blur(10px);
+    padding-bottom: 5%;
+}
