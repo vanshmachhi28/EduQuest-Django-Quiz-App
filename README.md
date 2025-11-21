@@ -53,29 +53,81 @@ Learning should be engaging, personalized, and data-informed. EduQuest bridges t
 ## Project Structure 📁
 
 EduQuest-Django-Quiz-App/
-├── Quiz/ # Main app
-│ ├── models.py # Database models (Quiz, Challenge, Badge, etc.)
-│ ├── views.py # View logic for all modules
-│ ├── urls.py # URL routing
-│ ├── admin.py # Django admin configuration
-│ ├── migrations/ # Database migrations
-│ └── templates/ # HTML templates
-├── Account/ # User authentication app
-│ ├── models.py # CustomUser model
-│ └── ...
-├── manage.py # Django management script
-├── requirements.txt # Project dependencies
-├── ScreenShots/ # UI screenshots
-│ ├── Home_Page.jpg
-│ ├── BrainBoost.jpg
-│ ├── Contact_Us.jpg
-│ ├── Admin_HomePage.jpg
-│ ├── MapQuest.jpg
-│ └── login_Page.jpg
-└── README.md # This file
+│
+├── 📂 API/                                # API App (if applicable)
+│   ├── models.py
+│   ├── views.py
+│   └── urls.py
+│
+├── 📂 Account/                            # User Authentication App
+│   ├── models.py                          # CustomUser model
+│   ├── views.py                           # Login, signup, logout views
+│   ├── urls.py
+│   ├── admin.py
+│   └── migrations/
+│
+├── 📂 Quiz/                               # Main Quiz Application
+│   ├── models.py                          # Quiz, Challenge, Badge, etc.
+│   ├── views.py                           # Quiz logic, modules, gamification
+│   ├── urls.py                            # Quiz routing
+│   ├── admin.py                           # Django admin setup
+│   ├── migrations/
+│   ├── apps.py
+│   └── tests.py
+│
+├── 📂 QuizApp/                            # Project Configuration
+│   ├── settings.py                        # Django settings
+│   ├── urls.py                            # Main URL routing
+│   ├── wsgi.py
+│   ├── asgi.py
+│   └── __init__.py
+│
+├── 📂 Quiz_Ans/                           # Quiz Answers/Solutions Module
+│   ├── models.py
+│   ├── views.py
+│   └── ...
+│
+├── 📂 ScreenShots/                        # UI Screenshots for Documentation
+│   ├── Home_Page.jpg                      # Main dashboard
+│   ├── login_Page.jpg                     # Login interface
+│   ├── Admin_HomePage.jpg                 # Admin panel
+│   ├── BrainBoost.jpg                     # BrainBoost puzzle game
+│   ├── MapQuest.jpg                       # MapQuest geography
+│   ├── Contact_Us.jpg                     # Contact form
+│   └── ...
+│
+├── 📂 media/                              # User uploaded files & badges
+│   ├── badges/                            # Badge icons
+│   ├── mapquest/                          # MapQuest images
+│   └── ...
+│
+├── 📂 static/Quiz/                        # Static files (CSS, JS, images)
+│   ├── css/                               # Custom stylesheets
+│   ├── js/                                # JavaScript files
+│   └── images/                            # Static images
+│
+├── 📂 templates/                          # HTML Templates
+│   ├── quiz/
+│   │   ├── quiz.html
+│   │   ├── quiz_result.html
+│   │   └── ...
+│   ├── brainboost_home.html
+│   ├── wordwhiz_home.html
+│   ├── mapquest_home.html
+│   ├── leaderboard.html
+│   ├── badges.html
+│   ├── login.html
+│   ├── signup.html
+│   └── ...
+│
+├── 📄 .gitignore                          # Git ignore file
+├── 📄 LICENSE                             # MIT License
+├── 📄 README.md                           # Project documentation
+├── 📄 manage.py                           # Django management script
+├── 📄 requirements.txt                    # Python dependencies
+│
+└── 📄 db.sqlite3 / MySQL database         # Database (not committed)
 
-
----
 
 ## Core Modules 📚
 
