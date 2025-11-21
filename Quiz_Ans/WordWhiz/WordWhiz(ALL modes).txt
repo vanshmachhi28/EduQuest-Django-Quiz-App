@@ -1,0 +1,260 @@
+SYNONYM (10 Questions)
+Question: "Choose the synonym of 'aberration'."
+
+Choices: ["Deviation", "Suppression", "Constancy", "Uniformity"]
+
+Correct: "Deviation"
+
+Question: "Choose the synonym of 'lucid'."
+
+Choices: ["Confusing", "Clear", "Awkward", "Dense"]
+
+Correct: "Clear"
+
+Question: "Choose the synonym of 'mitigate'."
+
+Choices: ["Aggravate", "Alleviate", "Complicate", "Provoke"]
+
+Correct: "Alleviate"
+
+Question: "Choose the synonym of 'prudent'."
+
+Choices: ["Careful", "Careless", "Indifferent", "Vague"]
+
+Correct: "Careful"
+
+Question: "Choose the synonym of 'onerous'."
+
+Choices: ["Enjoyable", "Arduous", "Light", "Simple"]
+
+Correct: "Arduous"
+
+Question: "Choose the synonym of 'ubiquitous'."
+
+Choices: ["Rare", "Everywhere", "Difficult", "Minimal"]
+
+Correct: "Everywhere"
+
+Question: "Choose the synonym of 'succinct'."
+
+Choices: ["Lengthy", "Brief", "Unclear", "Verbose"]
+
+Correct: "Brief"
+
+Question: "Choose the synonym of 'ostentatious'."
+
+Choices: ["Elegant", "Showy", "Plain", "Quiet"]
+
+Correct: "Showy"
+
+Question: "Choose the synonym of 'fortitude'."
+
+Choices: ["Weakness", "Strength", "Doubt", "Fear"]
+
+Correct: "Strength"
+
+Question: "Choose the synonym of 'alleviate'."
+
+Choices: ["Worsen", "Relieve", "Ignore", "Delay"]
+
+Correct: "Relieve"
+
+
+
+
+
+
+ANTONYM (10 Questions)
+Question: "Choose the antonym of 'concur'."
+
+Choices: ["Agree", "Disagree", "Approve", "Confirm"]
+
+Correct: "Disagree"
+
+Question: "Choose the antonym of 'innocuous'."
+
+Choices: ["Harmless", "Harmful", "Baseless", "Simple"]
+
+Correct: "Harmful"
+
+Question: "Choose the antonym of 'emulate'."
+
+Choices: ["Imitate", "Neglect", "Copy", "Follow"]
+
+Correct: "Neglect"
+
+Question: "Choose the antonym of 'lucid'."
+
+Choices: ["Clear", "Confusing", "Obvious", "Apparent"]
+
+Correct: "Confusing"
+
+Question: "Choose the antonym of 'augment'."
+
+Choices: ["Increase", "Enhance", "Reduce", "Support"]
+
+Correct: "Reduce"
+
+Question: "Choose the antonym of 'placid'."
+
+Choices: ["Calm", "Rough", "Serene", "Quiet"]
+
+Correct: "Rough"
+
+Question: "Choose the antonym of 'ascend'."
+
+Choices: ["Rise", "Descend", "Climb", "Upgrade"]
+
+Correct: "Descend"
+
+Question: "Choose the antonym of 'vivid'."
+
+Choices: ["Dull", "Bright", "Clear", "Colorful"]
+
+Correct: "Dull"
+
+Question: "Choose the antonym of 'meticulous'."
+
+Choices: ["Careless", "Detailed", "Attentive", "Precise"]
+
+Correct: "Careless"
+
+Question: "Choose the antonym of 'resilient'."
+
+Choices: ["Flexible", "Fragile", "Strong", "Persistent"]
+
+Correct: "Fragile"
+
+
+
+
+
+
+SENTENCE CORRECTION (10 Questions)
+Question: "Choose the correct sentence."
+
+Choices: ["He don't like apples.", "He doesn't likes apples.", "He doesn't like apples.", "He haven't like apples."]
+
+Correct: "He doesn't like apples."
+
+Question: "Choose the correct sentence."
+
+Choices: ["She have went home.", "She has gone home.", "She gone home.", "She has go home."]
+
+Correct: "She has gone home."
+
+Question: "Choose the correct sentence."
+
+Choices: ["Their going to the market.", "They're going to the market.", "There going to the market.", "They going to the market."]
+
+Correct: "They're going to the market."
+
+Question: "Choose the correct sentence."
+
+Choices: ["We was studying.", "We are studied.", "We were studying.", "We studied."]
+
+Correct: "We were studying."
+
+Question: "Choose the correct sentence."
+
+Choices: ["The informations are useful.", "The information are useful.", "The information is useful.", "Informations is useful."]
+
+Correct: "The information is useful."
+
+Question: "Choose the correct sentence."
+
+Choices: ["Each of the students have a book.", "Each students have a book.", "Each of the students has a book.", "Each students has a book."]
+
+Correct: "Each of the students has a book."
+
+Question: "Choose the correct sentence."
+
+Choices: ["Neither of us are guilty.", "Neither of us is guilty.", "Neither us is guilty.", "Neither us are guilty."]
+
+Correct: "Neither of us is guilty."
+
+Question: "Choose the correct sentence."
+
+Choices: ["The committee have decided.", "The committee has decided.", "Committee have decided.", "Committee has decide."]
+
+Correct: "The committee has decided."
+
+Question: "Choose the correct sentence."
+
+Choices: ["She is tallest girl.", "She is the tallest girl.", "She is a tallest girl.", "She is tallest of all girl."]
+
+Correct: "She is the tallest girl."
+
+Question: "Choose the correct sentence."
+
+Choices: ["I prefer tea than coffee.", "I prefer tea more than coffee.", "I prefer tea to coffee.", "I prefer tea with coffee."]
+
+Correct: "I prefer tea to coffee."
+
+
+
+
+
+
+FLASH WORD RACE (10 Questions)
+Question: "Choose the fastest synonym for 'start'."
+
+Choices: ["Begin", "Beginner", "Beginers", "Started"]
+
+Correct: "Begin"
+
+Question: "Quick, pick the antonym for 'accept'."
+
+Choices: ["Agree", "Refuse", "Receive", "Admire"]
+
+Correct: "Refuse"
+
+Question: "Choose the plural form of 'child'."
+
+Choices: ["Childs", "Childes", "Children", "Child's"]
+
+Correct: "Children"
+
+Question: "Choose the opposite of 'ascend'."
+
+Choices: ["Rise", "Descend", "Approach", "Expand"]
+
+Correct: "Descend"
+
+Question: "Which is a noun?"
+
+Choices: ["Quickly", "Beauty", "Beautiful", "Quick"]
+
+Correct: "Beauty"
+
+Question: "Which is the adjective?"
+
+Choices: ["Happily", "Happiness", "Happy", "Happen"]
+
+Correct: "Happy"
+
+Question: "Which is the correct spelling?"
+
+Choices: ["Recieve", "Receive", "Receeve", "Recive"]
+
+Correct: "Receive"
+
+Question: "Which is the comparative form of 'good'?"
+
+Choices: ["More good", "Gooder", "Better", "Best"]
+
+Correct: "Better"
+
+Question: "Which word means 'to look at quickly'? "
+
+Choices: ["Glance", "Glaze", "Grasp", "Glass"]
+
+Correct: "Glance"
+
+Question: "Pick the correct passive form: 'They write a letter.'"
+
+Choices: ["A letter is written by them.", "A letter was written by them.", "A letter written by them.", "They are writing a letter."]
+
+Correct: "A letter is written by them."
+
+

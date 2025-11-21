@@ -1,0 +1,62 @@
+
+🔍 Pattern Recognition (10 Questions – CS Project Level)
+
+C is to D as X is to ?
+
+Options: Y, Z, A, B
+
+Answer: Y
+
+Keyboard : Typing :: Mouse : ?
+
+Options: Screen, Cursor, Pointer, Touch
+
+Answer: Pointer
+
+HTTP : Protocol :: Python : ?
+
+Options: Language, Compiler, IDE, Server
+
+Answer: Language
+
+RAM : Temporary :: Hard Disk : ?
+
+Options: Storage, Cache, Memory, Buffer
+
+Answer: Storage
+
+Binary : 2 :: Decimal : ?
+
+Options: 8, 10, 12, 16
+
+Answer: 10
+
+Virus : Malware :: Phishing : ?
+
+Options: Email, Scam, Security, Worm
+
+Answer: Scam
+
+Queue : FIFO :: Stack : ?
+
+Options: FILO, FIFO, LIFO, LILO
+
+Answer: LIFO
+
+Motherboard : CPU :: Browser : ?
+
+Options: Tab, Web, HTML, Internet
+
+Answer: Web
+
+Encryption : Security :: Compression : ?
+
+Options: Backup, Storage, Size, Speed
+
+Answer: Size
+
+LAN : Local :: WAN : ?
+
+Options: World, Wide, Web, Global
+
+Answer: Wide
